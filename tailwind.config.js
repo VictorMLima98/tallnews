@@ -6,7 +6,17 @@ module.exports = {
         "./resources/**/*.vue",
     ],
   theme: {
-        extend: {},
+        extend: {
+            colors: {
+                "red": "#C4170C",
+                "subtitle": "#333333",
+                "container": "#F9F9F9",
+                "article-border": "#E1E1E1"
+            },
+            backgroundImage: {
+                'test': "url('/test.webp')",
+            }
+        },
   },
   plugins: [],
 }

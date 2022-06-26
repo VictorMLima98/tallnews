@@ -10,17 +10,26 @@ use Livewire\Component;
 class Index extends Component
 {
     public array $mainArticles = [];
+    public array $feedArticles = [];
 
-    public function mount()
+    public function fillData()
     {
-       // $this->fillMainArticles();
+        $this->fillMainArticles();
+        $this->fillFeedArticles();
     }
 
-    public function fillMainArticles()
+    private function fillMainArticles()
     {
-       $this->mainArticles = TopHeadlines::get(['country' => TopHeadlineDTO::COUNTRY_BRAZIL]);
+       $this->mainArticles = TopHeadlines::getMainArticles(['country' => TopHeadlineDTO::COUNTRY_BRAZIL]);
     }
 
+    private function fillFeedArticles()
+    {
+        $this->feedArticles = TopHeadlines::getFeedArticles([
+            'country' => TopHeadlineDTO::COUNTRY_BRAZIL,
+            'pageSize' => 8,
+        ]);
+    }
 
     public function render()
     {

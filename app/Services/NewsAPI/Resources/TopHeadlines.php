@@ -16,14 +16,14 @@ class TopHeadlines extends Client
         $this->endpoint = "top-headlines";
     }
 
-    public function get(array|TopHeadlineDTO $topHeadline): array
+    public function getMainArticles(array|TopHeadlineDTO $topHeadline): array
     {
         if (is_array($topHeadline)) {
             $topHeadline = new TopHeadlineDTO($topHeadline);
         }
 
-        if(!Cache::has('topHeadlines')) {
-            Cache::rememberForever('topHeadlines', function () use ($topHeadline) {
+        if(!Cache::has('mainArticles')) {
+            Cache::rememberForever('mainArticles', function () use ($topHeadline) {
                 return $this->request->get($this->endpoint, [
                     'country' => $topHeadline->country,
                     'pageSize' => $topHeadline->pageSize,
@@ -33,6 +33,24 @@ class TopHeadlines extends Client
 
         sleep(1);
 
-        return Cache::get('topHeadlines');
+        return Cache::get('mainArticles');
+    }
+
+    public function getFeedArticles(array|TopHeadlineDTO $topHeadline): array
+    {
+        if (is_array($topHeadline)) {
+            $topHeadline = new TopHeadlineDTO($topHeadline);
+        }
+
+        if(!Cache::has('feedArticles')) {
+            Cache::rememberForever('feedArticles', function () use ($topHeadline) {
+                return $this->request->get($this->endpoint, [
+                    'country' => $topHeadline->country,
+                    'pageSize' => $topHeadline->pageSize,
+                ])->json();
+            });
+        }
+
+        return Cache::get('feedArticles');
     }
 }

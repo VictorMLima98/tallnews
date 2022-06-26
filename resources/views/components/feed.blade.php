@@ -1,10 +1,19 @@
 <div class="flex flex-wrap">
+    @if(!$hasArticles)
+        <div class="fixed top-0 left-0 z-50 block w-full h-full opacity-100 bg-black bg-opacity-90">
+            <div class="flex items-center justify-center w-screen h-screen">
+                <i class="fas text-container fa-3x fa-circle-notch fa-spin"></i>
+            </div>
+        </div>
+    @endif
+    @if($hasArticles)
     <div class="w-2/3  flex flex-wrap divide-y-2 divide-article-border pr-4">
-        <!-- All Articles -->
-        <x-article />
-        <x-article />
-        <x-article />
-        <x-article />
+        @foreach($articles['articles'] as $article)
+            @if($loop->index < 3)
+                @continue
+            @endif
+            <x-article :article="$article" />
+        @endforeach
     </div>
 
     <!-- Recommended Section -->
@@ -34,4 +43,5 @@
             </div>
         </div>
     </div>
+    @endif
 </div>

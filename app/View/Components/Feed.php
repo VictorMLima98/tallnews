@@ -6,21 +6,13 @@ use Illuminate\View\Component;
 
 class Feed extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public bool $hasArticles = false;
+
+    public function __construct(public array $articles)
     {
-        //
+        $this->hasArticles = count($this->articles) ?? false;
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
-     */
     public function render()
     {
         return view('components.feed');

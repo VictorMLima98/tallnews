@@ -6,7 +6,6 @@ use Illuminate\View\Component;
 
 class MainArticles extends Component
 {
-
     public bool $hasArticles = false;
 
     public function __construct(public array $articles)

@@ -10816,6 +10816,27 @@ video {
     max-width: 1536px;
   }
 }
+.fixed {
+  position: fixed;
+}
+.absolute {
+  position: absolute;
+}
+.top-0 {
+  top: 0px;
+}
+.left-0 {
+  left: 0px;
+}
+.left-1 {
+  left: 0.25rem;
+}
+.z-10 {
+  z-index: 10;
+}
+.z-50 {
+  z-index: 50;
+}
 .row-span-2 {
   grid-row: span 2 / span 2;
 }
@@ -10843,6 +10864,12 @@ video {
 }
 .ml-auto {
   margin-left: auto;
+}
+.mr-2 {
+  margin-right: 0.5rem;
+}
+.block {
+  display: block;
 }
 .flex {
   display: flex;
@@ -10880,6 +10907,18 @@ video {
 .h-10 {
   height: 2.5rem;
 }
+.h-24 {
+  height: 6rem;
+}
+.h-96 {
+  height: 24rem;
+}
+.h-screen {
+  height: 100vh;
+}
+.h-72 {
+  height: 18rem;
+}
 .w-full {
   width: 100%;
 }
@@ -10900,6 +10939,12 @@ video {
 }
 .w-16 {
   width: 4rem;
+}
+.w-screen {
+  width: 100vw;
+}
+.w-8 {
+  width: 2rem;
 }
 .max-w-lg {
   max-width: 32rem;
@@ -11092,6 +11137,19 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
+.bg-slate-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+.bg-opacity-20 {
+  --tw-bg-opacity: 0.2;
+}
+.bg-opacity-75 {
+  --tw-bg-opacity: 0.75;
+}
+.bg-opacity-90 {
+  --tw-bg-opacity: 0.9;
+}
 .bg-cover {
   background-size: cover;
 }
@@ -11241,6 +11299,17 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+.text-transparent {
+  color: transparent;
+}
+.text-gray-200 {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+.text-hyperlink-hover {
+  --tw-text-opacity: 1;
+  color: rgb(166 19 10 / var(--tw-text-opacity));
+}
 .opacity-10 {
   opacity: 0.1;
 }
@@ -11249,6 +11318,18 @@ video {
 }
 .opacity-30 {
   opacity: 0.3;
+}
+.opacity-25 {
+  opacity: 0.25;
+}
+.opacity-90 {
+  opacity: 0.9;
+}
+.opacity-75 {
+  opacity: 0.75;
+}
+.opacity-100 {
+  opacity: 1;
 }
 .drop-shadow-lg {
   --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
@@ -11281,6 +11362,13 @@ video {
 .hover\:text-slate-100:hover {
   --tw-text-opacity: 1;
   color: rgb(241 245 249 / var(--tw-text-opacity));
+}
+@media (prefers-color-scheme: dark) {
+
+  .dark\:text-gray-600 {
+    --tw-text-opacity: 1;
+    color: rgb(75 85 99 / var(--tw-text-opacity));
+  }
 }
 @media (min-width: 768px) {
 

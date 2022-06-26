@@ -1,23 +1,23 @@
 <div class="grid grid-cols-2 grid-rows-1 gap-x-6 py-4">
     <div>
-        <img src="{{ asset('test-article.png') }}" alt="">
+        <img class="object-cover rounded-sm" src="{{ $article['urlToImage'] }}" alt="">
     </div>
 
     <div class="gap-y-2 flex flex-wrap">
         <!-- Subject -->
-        <div class="text-subtitle font-semibold w-full">Exclusivo Fantástico</div>
+        <div class="text-subtitle font-semibold w-full">{{ $article['source']['name'] }}</div>
 
         <!-- Title -->
         <div class="text-red text-2xl font-bold tracking-tighter w-full">
-            <a href="#" class="hover:text-hyperlink-hover">
-                Mãe de menina estuprada critica juíza que tentou impedir aborto
+            <a target="_blank" href="{{ $article['url'] }}" class="hover:text-hyperlink-hover">
+                {{ $article['title'] }}
             </a>
         </div>
 
         <!-- Subtitle -->
-        <div class="w-full text-article-subtitle font-normal">'Se queriam preservar minha filha, era algo que não deveriam perguntar para ela', diz.</div>
+        <div class="w-full text-article-subtitle font-normal">{{ $article['description'] }}</div>
 
         <!-- Date, Time & Category -->
-        <div class="w-full text-article-subtitle text-sm font-normal">Há 3 horas - Em Fantástico</div>
+        <div class="w-full text-article-subtitle text-sm font-normal">{{ $publishedAt }} - Em {{ $article['source']['name'] }}</div>
     </div>
 </div>

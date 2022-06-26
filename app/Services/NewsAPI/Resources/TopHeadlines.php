@@ -31,6 +31,8 @@ class TopHeadlines extends Client
             });
         }
 
+        sleep(1);
+
         return Cache::get('topHeadlines');
     }
 }

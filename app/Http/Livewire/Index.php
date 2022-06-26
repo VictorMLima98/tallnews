@@ -5,17 +5,21 @@ namespace App\Http\Livewire;
 
 use App\Services\NewsAPI\DTO\TopHeadlineDTO;
 use Facades\App\Services\NewsAPI\Resources\TopHeadlines;
+use Facades\App\Services\NewsAPI\Resources\Recommended;
+use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 
 class Index extends Component
 {
     public array $mainArticles = [];
     public array $feedArticles = [];
+    public array $recommendedArticles = [];
 
     public function fillData()
     {
         $this->fillMainArticles();
         $this->fillFeedArticles();
+        $this->fillRecommendedArticles();
     }
 
     private function fillMainArticles()
@@ -29,6 +33,11 @@ class Index extends Component
             'country' => TopHeadlineDTO::COUNTRY_BRAZIL,
             'pageSize' => 8,
         ]);
+    }
+
+    private function fillRecommendedArticles()
+    {
+        $this->recommendedArticles = Recommended::get();
     }
 
     public function render()

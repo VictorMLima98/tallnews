@@ -8,7 +8,7 @@ class Feed extends Component
 {
     public bool $hasArticles = false;
 
-    public function __construct(public array $articles)
+    public function __construct(public array $articles, public array $recommendedArticles)
     {
         $this->hasArticles = count($this->articles) ?? false;
     }

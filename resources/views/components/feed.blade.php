@@ -26,7 +26,9 @@
 
                 <div>
                     <!-- More Recommended Articles -->
-                    <a href="#" class="hover:text-hyperlink-hover">Mais conteúdos recomendados</a>
+                    <a href="#" class="hover:text-hyperlink-hover">Mais conteúdos recomendados &nbsp;
+                        <i class="fa fa-angle-down"></i>
+                    </a>
                 </div>
 
             </div>

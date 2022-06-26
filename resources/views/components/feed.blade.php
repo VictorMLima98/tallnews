@@ -1,50 +1,35 @@
-<div class="w-2/3 gap-y-6 flex flex-wrap divide-y-2 divide-article-border">
-    <div class="grid grid-cols-2 grid-rows-1 gap-x-6 py-4">
-        <div>
-            <img src="{{ asset('test-article.png') }}" alt="">
-        </div>
-
-        <div class="gap-y-2 flex flex-wrap">
-            <!-- Subject -->
-            <div class="text-subtitle font-semibold w-full">Exclusivo Fantástico</div>
-
-            <!-- Title -->
-            <div class="text-red text-2xl font-bold tracking-tighter w-full">
-                <a href="#" class="hover:text-hyperlink-hover">
-                    Mãe de menina estuprada critica juíza que tentou impedir aborto
-                </a>
-            </div>
-
-            <!-- Subtitle -->
-            <div class="w-full text-article-subtitle font-normal">'Se queriam preservar minha filha, era algo que não deveriam perguntar para ela', diz.</div>
-
-            <!-- Date, Time & Category -->
-            <div class="w-full text-article-subtitle text-sm font-normal">Há 3 horas - Em Fantástico</div>
-        </div>
+<div class="flex flex-wrap">
+    <div class="w-2/3 gap-y-6 flex flex-wrap divide-y-2 divide-article-border pr-2">
+        <!-- All Articles -->
+        <x-article />
+        <x-article />
+        <x-article />
+        <x-article />
     </div>
 
-    <div class="grid grid-cols-2 grid-rows-1 gap-x-6 py-4">
-        <div>
-            <img src="{{ asset('test-article.png') }}" alt="">
-        </div>
-
-        <div class="gap-y-2 flex flex-wrap">
-            <!-- Subject -->
-            <div class="text-subtitle font-semibold w-full">Exclusivo Fantástico</div>
-
-            <!-- Title -->
-            <div class="text-red text-2xl font-bold tracking-tighter w-full">
-                <a href="#" class="hover:text-hyperlink-hover">
-                    Mãe de menina estuprada critica juíza que tentou impedir aborto
-                </a>
+    <!-- Recommended Section -->
+    <div class="w-1/3 pl-2">
+        <div class="border border-article-border divide-y rounded-sm bg-white">
+            <!-- Recommended Section Title -->
+            <div class="text-subtitle font-bold px-6 py-2">
+                Viu isso aqui?
             </div>
 
-            <!-- Subtitle -->
-            <div class="w-full text-article-subtitle font-normal">'Se queriam preservar minha filha, era algo que não deveriam perguntar para ela', diz.</div>
+            <!-- Recommended Articles -->
+            <div class="text-red font-bold tracking-tighter leading-5 w-full px-6 py-4 gap-y-6 flex flex-wrap">
 
-            <!-- Date, Time & Category -->
-            <div class="w-full text-article-subtitle text-sm font-normal">Há 3 horas - Em Fantástico</div>
+                <x-recommended-article />
+                <x-recommended-article />
+                <x-recommended-article />
+                <x-recommended-article />
+                <x-recommended-article />
+
+                <div>
+                    <!-- More Recommended Articles -->
+                    <a href="#" class="hover:text-hyperlink-hover">Mais conteúdos recomendados</a>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>
-

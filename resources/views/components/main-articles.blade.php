@@ -12,51 +12,52 @@
     <div class="row-span-2 p-2 gap-y-12 flex flex-wrap px-6 py-4 border-2 border-article-border rounded-sm">
 
         <!-- Subject -->
-        <div class="text-subtitle font-semibold w-full">{{ $articles['articles'][0]['author'] }}</div>
+        <div class="text-subtitle font-semibold w-full">{{ $articles['articles'][0]['source']['name'] }}</div>
 
         <!-- Title -->
         <div class="text-red text-5xl font-bold tracking-tighter w-full">
-            <a href="{{ $articles['articles'][0]['title'] }}" class="hover:text-hyperlink-hover">
+            <a target="_blank" href="{{ $articles['articles'][0]['url'] }}" class="hover:text-hyperlink-hover">
                 {{ $articles['articles'][0]['title'] }}
             </a>
         </div>
 
         <!-- Description -->
-        <div class="w-full text-subtitle font-normal">Segundo investigação, pagamentos se referiam a evento com Milton Ribeiro. Ex-ministro de Bolsonaro e pastores são suspeitos de corrupção.</div>
-    </div>
-
-    <!-- Right Side Articles -->
-    <div class="flex flex-wrap bg-cover" style="background-image: url({{ asset('test.webp') }})">
-        <div class="gap-y-2 flex flex-wrap backdrop-brightness-50 backdrop-contrast-25 w-full px-6 py-4 rounded-sm border-2 border-transparent">
-            <!-- Subject -->
-            <div class="tracking-wide w-full">
-                <span class="text-container font-semibold drop-shadow-lg">Loterias</span>
-            </div>
-
-            <!-- Title -->
-            <div class="text-white drop-shadow-2xl text-3xl font-bold tracking-tight w-full">
-                <a href="#" class="hover:text-slate-100">Quina de São João paga R$ 196 milhões; confira os números</a>
-            </div>
-
-            <!-- Description -->
-            <div class="w-full text-white font-normal tracking-tight">Mega-Sena: aposta única de Diadema é ganhadora de prêmio de quase R$ 80 milhões</div>
+        <div class="w-full text-subtitle font-normal">
+            {{ $articles['articles'][0]['description'] }}
         </div>
     </div>
 
-    <div class="flex flex-wrap bg-cover" style="background-image: url({{ asset('test.webp') }})">
+    <!-- Right Side Articles -->
+    <div class="flex flex-wrap bg-cover" style="background-image: url('{{ $articles['articles'][1]['urlToImage'] }}')">
         <div class="gap-y-2 flex flex-wrap backdrop-brightness-50 backdrop-contrast-25 w-full px-6 py-4 rounded-sm border-2 border-transparent">
             <!-- Subject -->
             <div class="tracking-wide w-full">
-                <span class="text-container font-semibold drop-shadow-lg">Loterias</span>
+                <span class="text-container font-semibold drop-shadow-lg">{{ $articles['articles'][1]['source']['name'] }}</span>
             </div>
 
             <!-- Title -->
             <div class="text-white drop-shadow-2xl text-3xl font-bold tracking-tight w-full">
-                <a href="#" class="hover:text-slate-100">Quina de São João paga R$ 196 milhões; confira os números</a>
+                <a target="_blank" href="{{ $articles['articles'][1]['url'] }}" class="hover:text-slate-100">{{ $articles['articles'][1]['title'] }}</a>
             </div>
 
             <!-- Description -->
-            <div class="w-full text-white font-normal tracking-tight">Mega-Sena: aposta única de Diadema é ganhadora de prêmio de quase R$ 80 milhões</div>
+            <div class="w-full text-white font-normal tracking-tight">{{ $articles['articles'][1]['description'] }}</div>
+        </div>
+    </div>
+    <div class="flex flex-wrap bg-cover" style="background-image: url('{{ $articles['articles'][2]['urlToImage'] }}')">
+        <div class="gap-y-2 flex flex-wrap backdrop-brightness-50 backdrop-contrast-25 w-full px-6 py-4 rounded-sm border-2 border-transparent">
+            <!-- Subject -->
+            <div class="tracking-wide w-full">
+                <span class="text-container font-semibold drop-shadow-lg">{{ $articles['articles'][2]['source']['name'] }}</span>
+            </div>
+
+            <!-- Title -->
+            <div class="text-white drop-shadow-2xl text-3xl font-bold tracking-tight w-full">
+                <a target="_blank" href="{{ $articles['articles'][2]['url'] }}" class="hover:text-slate-100">{{ $articles['articles'][2]['title'] }}</a>
+            </div>
+
+            <!-- Description -->
+            <div class="w-full text-white font-normal tracking-tight">{{ $articles['articles'][2]['description'] }}</div>
         </div>
     </div>
     @endif

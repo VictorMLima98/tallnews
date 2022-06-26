@@ -1,14 +1,23 @@
 <div class="bg-white gap-x-2 gap-y-2 w-full grid grid-cols-1 md:grid-cols-2 md:grid-rows-2">
+    @if(!$hasArticles)
+        <x-loading-states.main-article />
+
+        <x-loading-states.right-side-article />
+
+        <x-loading-states.right-side-article />
+    @endif
+
+    @if($hasArticles)
     <!-- Main Article -->
     <div class="row-span-2 p-2 gap-y-12 flex flex-wrap px-6 py-4 border-2 border-article-border rounded-sm">
 
         <!-- Subject -->
-        <div class="text-subtitle font-semibold w-full">Ministério da Educação</div>
+        <div class="text-subtitle font-semibold w-full">{{ $articles['articles'][0]['author'] }}</div>
 
         <!-- Title -->
         <div class="text-red text-5xl font-bold tracking-tighter w-full">
-            <a href="#" class="hover:text-hyperlink-hover">
-                Escândalo do MEC: comprovantes mostram depósitos para parentes de pastores
+            <a href="{{ $articles['articles'][0]['title'] }}" class="hover:text-hyperlink-hover">
+                {{ $articles['articles'][0]['title'] }}
             </a>
         </div>
 
@@ -50,4 +59,5 @@
             <div class="w-full text-white font-normal tracking-tight">Mega-Sena: aposta única de Diadema é ganhadora de prêmio de quase R$ 80 milhões</div>
         </div>
     </div>
+    @endif
 </div>

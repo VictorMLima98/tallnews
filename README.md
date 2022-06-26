@@ -16,3 +16,9 @@ I mean, fetching APIs, using loading states and async requests is painful with s
 - PHP's 8.0 constructor property promotion (I personally love this one)
 
 This was made in 4 hours.
+
+### Requirements to Run / Set Up
+- PHP 8.1
+- Composer ^2
+- Redis
+- NPM ^8
